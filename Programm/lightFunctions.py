@@ -56,4 +56,4 @@ def readIntensity(photoName, plotName, lamp, surface):
 
     return luma
 
-readIntensity("test.png", "test", "test", "test")
+readIntensity("lamp-white.png", "Спектр ртутной лампы и белого листа", "Ртутная накаливания", "Белый лист")
