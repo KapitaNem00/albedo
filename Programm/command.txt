@@ -1,0 +1,1 @@
+raspistill -n -t 1000 -w 2560 -h 1440 -rot 180 -ss 2000000 -ISO 100 -awb off -awbg 1.5,1.5 -e png -o Programm/Data/lamp-green.png
