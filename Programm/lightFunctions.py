@@ -15,12 +15,12 @@ BACKGROUND_COLS = slice(1130, 1350)
 
 # Камера стоит чуть повёрнутой относительно щели, и линии спектра на снимке
 # наклонены. Поворачиваем участок со спектром обратно на этот угол, градусы.
-ANGLE = 5
+ANGLE = 1
 
 
 def straighten(photo):
-    top, bottom = ROWS.start - 60, ROWS.stop + 60
-    left, right = BACKGROUND_COLS.start - 60, BACKGROUND_COLS.stop + 60
+    top, bottom = ROWS.start - 30, ROWS.stop + 30
+    left, right = BACKGROUND_COLS.start +20, BACKGROUND_COLS.stop + 30
     photo = photo[:, :, 0:3].astype(float)
     # поворот вокруг центра участка, то есть вокруг середины спектра
     photo[top:bottom, left:right] = ndimage.rotate(photo[top:bottom, left:right], ANGLE, reshape=False, order=1)
@@ -56,4 +56,4 @@ def readIntensity(photoName, plotName, lamp, surface):
 
     return luma
 
-readIntensity("lamp-white.png", "Спектр ртутной лампы и белого листа", "Ртутная накаливания", "Белый лист")
+readIntensity("lamp-yellow.png", "Спектр лампы накаливания и желтого листа", "Лампа накаливания", "Желтый лист")
